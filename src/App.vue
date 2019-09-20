@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <section>
+      <van-nav-bar title="标题" left-text="返回" @click-left="onClickLeft" left-arrow />
+      <router-view></router-view>
+      <Footer></Footer>
+    </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Footer from './components/Footer.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  import Vue from 'vue';
+  import {
+    Toast
+  } from 'vant';
+
+  Vue.use(Toast);
+  export default {
+    name: 'app',
+    components: {
+      Footer
+    },
+    methods: {
+      onClickLeft() {
+        Toast('返回上一页');
+        this.$router.go(-1);
+      },
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
