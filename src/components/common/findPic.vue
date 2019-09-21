@@ -7,8 +7,8 @@
                     :is-loading="isLoading" :threshold="200">
                     <nut-col :span="12" v-for="(item,index) in datalist" :key="index">
                         <div class="flex-content">
-                            <img v-lazy="item.cover" :key="item.crawled" alt="img" />
-                            <p>{{item.crawled | filternum}}</p>
+                            <img v-lazy="item.url"  alt="img" />
+                            <p>{{item.who | filternum}}</p>
                         </div>
                     </nut-col>
                 </nut-infiniteloading>
@@ -43,10 +43,9 @@
                     this.isLoading = false;
                 }, 100);
             },
-
             getdata: function (num) {
                 console.log(this.$api.Findpic.find);
-                this.$http.get(this.$api.Findpic.find+ num + '/page/' + this.limit,false).then((res) => {
+                this.$http.get(this.$api.Findpic.find+ num +'/'+ this.limit,false).then((res) => {
                     console.log(res);
                      for (var i in res.data.results) {
                         var item = res.data.results[i];
@@ -57,7 +56,7 @@
         },
         filters:{
                 filternum(data){
-                       return '￥'+data 
+                       return '美女'+data 
                 }
         },
         destroyed() {

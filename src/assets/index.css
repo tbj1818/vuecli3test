@@ -30,7 +30,7 @@ body { padding-bottom: 70px; background: #f0f0f0; font-family: 'PingFang-SC-Medi
 .w90{width:90%; margin:10px auto}
 .contp10{padding: 10px}
 .flex-content {width: 100%; padding: 0}
-.flex-content img { width: 100%; height: 100px;margin:0 auto}
+.flex-content img { width: 100%; height: 180px;margin:0 auto}
 .flex-content p{ text-align: center}
 .fixedbottom0{ position: fixed; bottom:0;left: 0}
 .van-icon,.van-icon::before {display: inline-block;font-size: 25px;}
@@ -47,4 +47,4 @@ body { padding-bottom: 70px; background: #f0f0f0; font-family: 'PingFang-SC-Medi
 .active .icon{color: red}
 
 .flexcont{display: flex;width: 100%}
-.rightcont{float: right; font-size: 50px; line-height: 60px; width: 100%; text-align: center}
+.rightcont{float: right; font-size:30px; line-height: 60px; width: 100%; text-align: center}

@@ -5,11 +5,11 @@
         <Banner :bannerdata="bannerdata"></Banner>
         <div class="flexcont">
             <van-sidebar v-model="activeKey">
-                <van-sidebar-item :title="item.name" v-for="(item,index) in datalist" :key="index"
-                    @click="showright(item)" />
+            <van-sidebar-item :title="item" v-for="(item,index) in datalist" :key="index"
+                    @click="showright(index)" />
             </van-sidebar>
             <div class="rightcont">
-                {{rightcontent}}
+                <h1>{{rightcontent.desc}}</h1>
             </div>
         </div>
         <!-- 图片懒加载无限加载展示 -->
@@ -33,7 +33,8 @@
                     bannerH: '150px',
                 },
                 datalist: [],
-                rightcontent: '1'
+                rightcontent: '1',
+                showcont:false
             }
         },
         components: {
@@ -46,13 +47,17 @@
                 console.log(this.$api.classify.classify);
                 this.$http.get(this.$api.classify.classify, false).then((res) => {
                     console.log(res);
-                    that.datalist = res.data.results;
-                    that.showright(res.data.results[0]);
+                    that.datalist = res.data.category;
+                    this.showright(0)
                 })
             },
-            showright(item) {
-                console.log(1);
-                this.rightcontent = item.en_name;
+            showright(index){
+                 console.log(index);
+                this.$http.get(this.$api.classify.classify, false).then((res) => {
+                    console.log(res);
+                    this.rightcontent=res.data.results['Android'][index];
+                    console.log(this.rightcontent)
+                })
             }
         },
         mounted: function () {

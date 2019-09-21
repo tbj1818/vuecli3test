@@ -60,7 +60,7 @@ module.exports = {
         https: false,
         proxy: {
             '/api': {
-                target: ' http://gank.io/api/', //对应自己的接口
+                target: 'http://gank.io/api/', //对应自己的接口
                 changeOrigin: true,
                 ws: true,
                 pathRewrite: {

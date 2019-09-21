@@ -11,10 +11,10 @@ export default {
         UserInfo: '/user/info'
     },
     Findpic: {
-      find: '/api/data/id/appinn/count/'
+      find: '/api/data/福利/'
     },
     classify: {
-        classify: '/api/categories'
+        classify: '/api/today'
     },
     
     // 当然也可以用文件方式进行管理
