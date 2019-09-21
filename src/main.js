@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import axios from 'axios'
-import './assets/index.css'
-// axios需要使用prototype将axios挂载到原型上 ，$后面是自己另起的名称，以后就可以使用该名称
-Vue.prototype.$axios = axios
+import api from './http/api';
+import http from './http/http';
 
+// axios 拦截器
+import './http/axios'
+
+// 对后端接口 进行全局注册
+Vue.prototype.$api = api;
+// 对请求方式 进行全局注册
+Vue.prototype.$http = http;
+
+import './assets/index.css'
 Vue.config.productionTip = false
 
 import Vant from 'vant';

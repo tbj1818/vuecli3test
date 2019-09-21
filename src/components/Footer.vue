@@ -13,6 +13,8 @@
         </router-link>
       </a>
     </div>
+    <!-- 返回顶部 -->
+    <nut-backtop :distance="400"></nut-backtop>
   </section>
 </template>
 

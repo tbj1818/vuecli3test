@@ -45,14 +45,14 @@
             },
 
             getdata: function (num) {
-                this.$axios.get('/api/data/id/appinn/count/' + num + '/page/' + this.limit).then(res => {
-                    window.console.log(res.data.results);
-                    for (var i in res.data.results) {
+                console.log(this.$api.Findpic.find);
+                this.$http.get(this.$api.Findpic.find+ num + '/page/' + this.limit,false).then((res) => {
+                    console.log(res);
+                     for (var i in res.data.results) {
                         var item = res.data.results[i];
                         this.datalist.push(item)
                     }
-                    this.datalist = res.data.results;
-                })
+               })
             }
         },
         filters:{
@@ -66,7 +66,6 @@
         mounted: function () {
             this.getdata(10);
         }
-
     }
 </script>
 

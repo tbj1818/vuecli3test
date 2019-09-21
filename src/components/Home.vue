@@ -10,9 +10,6 @@
         </van-grid>
         <!-- 图片懒加载无限加载展示 -->
         <Findpic></Findpic>
-        <!-- 返回顶部 -->
-        <nut-backtop :distance="400">
-        </nut-backtop>
     </section>
 </template>
 
