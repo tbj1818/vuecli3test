@@ -48,3 +48,5 @@ body { padding-bottom: 70px; background: #f0f0f0; font-family: 'PingFang-SC-Medi
 
 .flexcont{display: flex;width: 100%}
 .rightcont{float: right; font-size:30px; line-height: 60px; width: 100%; text-align: center}
+
+.tabbar-nav a{color: #999}
